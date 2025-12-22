@@ -2,19 +2,19 @@
    共通スタイル（すべてのページに適用）
    ========================================== */
 
-/* 全体の基本設定 */
+/* 全体の基本設定：ライトテーマ＆余白多め */
 body {
   font-family: "Arial", "Hiragino Sans", sans-serif;
-  line-height: 1.6;
-  color: #f5f5f5;           /* 文字色を明るめに */
-  background-color: #1c1c1c; /* Blackboardらしい濃い黒板色 [web:43] */
+  line-height: 1.8;
+  color: #233044;              /* やや落ち着いたダークネイビー [web:66] */
+  background-color: #f4f7fb;   /* ごく薄いブルーグレー [web:65] */
   margin: 0;
-  padding: 20px;
+  padding: 24px;
 }
 
 /* ページ全体の最大幅 */
 body {
-  max-width: 900px;
+  max-width: 960px;
   margin: 0 auto;
 }
 
@@ -23,21 +23,22 @@ body {
    ========================================== */
 
 h1 {
-  font-size: 28px;
-  color: #f9a21d;              /* Blackboardのブランドオレンジ [web:47] */
-  border-bottom: 3px solid #4776be; /* ブランドブルーを下線に [web:47] */
-  padding-bottom: 10px;
-  margin-bottom: 30px;
-  text-align: center;
+  font-size: 30px;
+  color: #1a73e8;                /* 明るめの教育サイト向きブルー [web:66] */
+  border-bottom: 4px solid #34a853; /* グリーンで学習・成長のイメージ [web:66] */
+  padding-bottom: 12px;
+  margin-bottom: 32px;
+  text-align: left;
 }
 
 h2 {
-  font-size: 20px;
-  color: #ffffff;
-  margin-top: 25px;
-  margin-bottom: 15px;
-  border-left: 5px solid #4776be; /* ブルーのアクセント [web:47] */
-  padding-left: 12px;
+  font-size: 22px;
+  color: #233044;
+  margin-top: 28px;
+  margin-bottom: 16px;
+  border-left: 6px solid #1a73e8;
+  padding-left: 14px;
+  background: linear-gradient(to right, #e3f2fd 0%, #f4f7fb 60%);
 }
 
 /* ==========================================
@@ -45,14 +46,13 @@ h2 {
    ========================================== */
 
 p {
-  font-size: 15px;
-  margin-bottom: 15px;
-  line-height: 1.8;
+  font-size: 16px;
+  margin-bottom: 16px;
 }
 
-/* リストのスタイル */
+/* リストのスタイル：読みやすい余白と行間 */
 ul, ol {
-  margin-left: 20px;
+  margin-left: 24px;
   margin-bottom: 20px;
 }
 
@@ -68,77 +68,98 @@ li {
 table {
   width: 100%;
   border-collapse: collapse;
-  margin: 20px 0;
-  background-color: #262626; /* 背景も少し暗めに */
-  box-shadow: 0 2px 4px rgba(0,0,0,0.6);
+  margin: 24px 0;
+  background-color: #ffffff;
+  box-shadow: 0 4px 10px rgba(15, 23, 42, 0.08);
+  border-radius: 8px;
+  overflow: hidden;
 }
 
 table th {
-  background-color: #4776be; /* 見出しにブランドブルー [web:47] */
-  color: #fff;
-  padding: 12px;
+  background: linear-gradient(90deg, #1a73e8, #34a853); /* ブルー〜グリーンのグラデーション [web:63][web:66] */
+  color: #ffffff;
+  padding: 12px 14px;
   text-align: left;
   font-weight: bold;
+  letter-spacing: 0.03em;
 }
 
 table td {
-  padding: 12px;
-  border-bottom: 1px solid #444;
+  padding: 12px 14px;
+  border-bottom: 1px solid #e0e5ee;
 }
 
-table tr:hover {
-  background-color: #333333;
+table tr:nth-child(even) td {
+  background-color: #f8fafc;
+}
+
+table tr:hover td {
+  background-color: #e3f2fd;
 }
 
 /* ==========================================
    その他の要素
    ========================================== */
 
-/* ナビゲーション */
+/* ナビゲーション：カード風タブナビ */
 nav {
   text-align: center;
-  margin-bottom: 30px;
-  padding-bottom: 15px;
-  border-bottom: 1px solid #444;
+  margin-bottom: 32px;
+  padding: 12px 0;
+  background-color: #ffffff;
+  border-radius: 999px;
+  box-shadow: 0 3px 8px rgba(15, 23, 42, 0.08);
 }
 
 nav a {
-  color: #f9a21d;  /* ナビはオレンジで強調 [web:47] */
+  color: #233044;
   text-decoration: none;
-  margin: 0 15px;
+  margin: 0 18px;
   font-weight: bold;
+  font-size: 14px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 nav a:hover {
+  background-color: #1a73e8;
   color: #ffffff;
-  text-decoration: underline;
 }
 
-/* リンク */
+/* リンク：ブルーを基調に、ホバーで強調 */
 a {
-  color: #4776be;  /* 通常リンクはブルー [web:47] */
+  color: #1a73e8;
   text-decoration: none;
+  border-bottom: 1px dashed rgba(26,115,232,0.5);
 }
 
 a:hover {
-  color: #f9a21d;
-  text-decoration: underline;
+  color: #174ea6;
+  border-bottom-style: solid;
 }
 
-/* 画像 */
+/* 画像：カード風に表示 */
 img {
   max-width: 100%;
   height: auto;
-  margin: 15px 0;
-  border-radius: 5px;
-  border: 2px solid #333;
+  margin: 18px 0 8px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15);
 }
 
 /* イタリック（図表の説明など） */
 em {
   display: block;
   font-size: 13px;
-  color: #cccccc;
+  color: #607087;
   font-style: italic;
-  margin-top: 8px;
+  margin-top: 4px;
+}
+
+/* 追加：ページ下部の余白を少し広めに */
+body::after {
+  content: "";
+  display: block;
+  height: 40px;
 }
